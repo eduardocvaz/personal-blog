@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>-->
+<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>-->
+<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>-->
+
+<!--  <link rel="stylesheet" href="https://www.eduardovaz.dev/css/dracula.css">-->
+  <script>hljs.highlightAll();</script>
+  <style>
+      body {
+          font-family: "Courier New", monospace;
+          margin: 20px;
+      }
+      pre {
+          background-color: #2d2d2d;
+          color: #f8f8f2;
+          margin: 0 10vw;
+          padding: 10px;
+          overflow-x: auto; /* Rolar horizontalmente quando necessário */
+      }
+
+      .title {
+          text-align: center;
+          padding: 10px;
+      }
+
+      h2 {
+          padding: 5px;
+      }
+
+      p {
+          margin: 10px 0;
+      }
+      ul {
+          list-style-type: disc;
+          margin-left: 20px;
+      }
+
+      li {
+          margin: 5px 0;
+      }
+
+      a {
+          color: #3498db;
+      }
+  </style>
+</head>
+
+<body>
+<p>
+  Você já sentiu a necessidade de uma API simples e rápida para simular um back-end durante o desenvolvimento de um aplicativo ou site? JsonServer é a resposta para os seus problemas. Neste artigo, vamos explorar como o JsonServer pode acelerar o desenvolvimento, usando um exemplo prático relacionado a entidades de um escritório. Prepare-se para descobrir como criar uma API REST completa em questão de minutos!
+</p>
+
+<h2>O que é JsonServer?</h2>
+<p>
+  O JsonServer é uma ferramenta extremamente poderosa, mas surpreendentemente simples, que permite criar uma API REST completa com dados fictícios em JSON. É perfeito para prototipagem, testes e desenvolvimento rápido, pois elimina a necessidade de um back-end real durante a fase inicial de desenvolvimento.
+</p>
+
+<h2>Instalando o JsonServer:</h2>
+<p>
+  Começamos pela instalação. Para fazer isso, você precisa ter o Node.js instalado. Execute o seguinte comando no seu terminal:
+</p>
+<pre><code>npm install -g json-server</code></pre>
+
+<h2>Criando um Arquivo de Dados:</h2>
+<p>
+  A simplicidade do JsonServer é evidente no próximo passo. Crie um arquivo JSON que representará os dados do seu escritório. Aqui está um exemplo de arquivo <code>db.json</code>:
+</p>
+<pre><code class="json">
+  {
+    "funcionarios": [
+      { "id": 1, "nome": "João", "cargo": "Desenvolvedor" },
+      { "id": 2, "nome": "Maria", "cargo": "Designer" },
+      { "id": 3, "nome": "Pedro", "cargo": "Gerente" }
+    ],
+    "projetos": [
+      { "id": 1, "nome": "Projeto A", "responsavel": 1 },
+      { "id": 2, "nome": "Projeto B", "responsavel": 3 }
+    ]
+  }
+  </code></pre>
+
+<h2>Iniciando o JsonServer:</h2>
+<p>
+  Agora, a parte mágica acontece. Execute o seguinte comando para iniciar o JsonServer:
+</p>
+<pre>json-server --watch db.json</pre>
+
+<p>
+  Isso inicia um servidor na porta 3000 com todas as rotas CRUD (Create, Read, Update, Delete) prontas para uso.
+</p>
+
+<h2>Acessando os Dados:</h2>
+<p>
+  Agora, você pode acessar seus dados do escritório através das seguintes rotas:
+</p>
+<ul>
+  <li><a href="http://localhost:3000/funcionarios" target="_blank">/funcionarios</a>: Obtenha todos os funcionários.</li>
+  <li><a href="http://localhost:3000/projetos" target="_blank">/projetos</a>: Obtenha todos os projetos.</li>
+</ul>
+
+<p>
+  Por exemplo, para obter todos os funcionários, basta fazer uma solicitação GET para <a href="http://localhost:3000/funcionarios" target="_blank">http://localhost:3000/funcionarios</a>.
+</p>
+
+<h2>Facilidade de Uso:</h2>
+<p>
+  A grande vantagem do JsonServer é sua facilidade de uso. Não há necessidade de escrever código de servidor complexo. Você pode criar, ler, atualizar e excluir dados com apenas algumas solicitações HTTP.
+</p>
+
+<ul>
+  <li><code>GET /funcionarios</code>: Obtenha todos os funcionários.</li>
+  <li><code>GET /projetos</code>: Obtenha todos os projetos.</li>
+  <li><code>POST /funcionarios</code>: Adicione um novo funcionário.</li>
+  <li><code>PUT /funcionarios/1</code>: Atualize o funcionário com ID 1.</li>
+  <li><code>DELETE /funcionarios/2</code>: Exclua o funcionário com ID 2.</li>
+</ul>
+
+<h2>Conclusão:</h2>
+<p>
+  O JsonServer é uma ferramenta incrivelmente útil que simplifica o desenvolvimento de APIs durante a fase de prototipagem e desenvolvimento inicial. Com uma configuração simples e uma facilidade de uso impressionante, você pode acelerar seu trabalho de desenvolvimento sem perder tempo com complexidades de back-end. Experimente o JsonServer e veja como ele pode transformar sua abordagem de desenvolvimento.
+</p>
+
+<p>
+  Espero que este guia prático o ajude a entender e aproveitar a facilidade do JsonServer em seus projetos de desenvolvimento de software. Boa codificação!
+</p>
+</body>
+
+</html>

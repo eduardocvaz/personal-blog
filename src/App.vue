@@ -1,30 +1,17 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <v-layout>
+    <TopNav></TopNav>
+    <v-main>
+      <RouterView />
+    </v-main>
+  </v-layout>
 </template>
+<script setup>
+// import { useTheme } from "vuetify";
+import TopNav from "@/components/TopNav.vue";
+// const theme = useTheme();
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+// function toggleTheme() {
+//   theme.global.name.value = theme.global.current.value.dark ? "light" : "dark";
+// }
+</script>
